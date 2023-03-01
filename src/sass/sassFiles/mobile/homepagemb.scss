@@ -1,0 +1,450 @@
+@import '../../sassStyles/variables';
+@import '../../sassStyles/typography';
+@import '../../sassStyles/mixins';
+@import '../../sassStyles/global';
+
+
+.mobile{
+    .mediumsectionheader{
+        h3{
+            @include myfont(30px,700,$main_font);
+            margin:30px 0;
+        }
+    }
+    .mynavbar{
+        background-color: transparent;
+        position: absolute;
+        
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        height: unset;
+        
+        .nav-link{
+            color:#fff;
+            margin:0 25px;
+            padding: 0!important;
+            @include myfont(18px,400,$main_font);
+            @include media(lgDevice){
+                margin:0 12px;
+            }
+        }
+    }
+    .myBanner{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        .bnoverlay{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 94, 174, 0.8);;
+            text-align: center;
+            img{
+                &:first-child{
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    height: 100%;
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    right:0;
+                    top:0;
+                    height: 100%;
+                }
+            }
+            .bnrtextwrapper{
+                margin-top: 50vh;
+                transform: translateY(-50%)!important;
+
+                h1{
+                    
+                    color: #fff;
+                    @include myfont(40px,700,$main_font);
+                }
+                p{
+                    @include myfont(14px,400,$main_font);
+                    color: #fff;
+                    
+                }
+            }
+        }
+        video{
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+    }
+
+    .servicesection{
+        
+        .bigsectionheader{
+            text-align: center;
+            h3{
+                @include myfont(40px,700,$main_font);
+                position: relative;
+                margin: 75px 0;
+                display: inline-block;
+
+                &::after{
+                    bottom:-16px;
+                    width:70%;
+                    height: 8px;
+                    left: 50%;
+                    
+                    position:absolute;
+                    content:'';
+                    background-color: #000;
+                    animation: mymove 3s infinite;
+                    transform: scaleX(0) translateX(-50%);
+                    transform-origin: bottom left;
+                    transition:transform 3s infinite;
+                }
+                @keyframes mymove {
+                    0% {
+                     transform: scaleX(1) translateX(-50%);
+                     transform-origin: bottom left;
+                    }
+                    
+                    50% {
+                        transform: scaleX(0) translateX(-50%);
+                        transform-origin: bottom left;
+                    }
+                    100%{
+                        transform: scaleX(1) translateX(-50%);
+                     transform-origin: bottom right;
+                    }
+                    
+                  }
+            }
+        }
+        .servicesubcomponent{
+            margin-bottom: 50px;
+            .mobilegap{
+
+            }
+            .textpart{
+                height: 203px;
+                width:419px;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 50px;
+                
+                .wrapperwrap{
+                    h5{
+                        @include myfont(20px,700,$main_font);
+                        margin-bottom: 0;
+                        margin-top: 30px;
+                    }
+                    p{
+                        @include myfont(18px,400,$main_font);
+                        margin-top: 25px;
+                        margin-bottom: 0;
+                        line-height: 25px;
+                    }
+                    .commonbutton{
+                        text-align: center;
+                        button{
+                            padding:10px 30px;
+                            @include myfont(14px,500,$main_font);
+                        }
+                    }
+                }
+            }
+        }
+       
+    }
+    .focusindutriessection{
+        background-color: #f8f8f8;
+        padding-bottom: 40px;
+        width: 100%;
+        .mediumsectionheader{
+            h3{
+                @include myfont(30px,700,$main_font);
+            }
+        }
+        .focussmallcard{
+            .img{
+                img{
+                    width: 40px;
+                    
+                }
+                
+            }
+            .text{
+                p{
+                    @include myfont(14px,500,$main_font);
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+    .whychooseussection{
+        
+        width: 100%;
+        background-color: #fff;
+        padding: 0 0 90px 0;
+        .mediumsectionheader{
+            h3{
+                @include myfont(30px,700,$main_font);
+                margin:30px 0;
+            }
+        }
+      
+        .middlesection{
+            p{
+                @include myfont(14px,400,$main_font);
+                color:#000;
+                margin-bottom: 20px;
+                line-height: 25px;
+            }
+        }
+        .bottomsection{
+            text-align: center;
+            .wcuCardmain{
+                margin-top: 50px;
+            }
+            .mytitle{
+                h4{
+                    @include myfont(20px,700,$main_font);
+                }
+            }
+            .para{
+                margin-top: 5px;
+                p{
+                    @include myfont(14px,400,$main_font);
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+    .ourclientssection{
+        padding-bottom: 43px;
+        background-color: #f8f8f8;
+        img{
+            margin-bottom: 30px;
+        }
+        .mbgap{
+            padding:0 3px!important;
+            img{
+                margin-bottom: 6px;
+            }
+        }
+    }
+    .countersection{
+        padding:40px 0;
+        background-color: #f8f8f8;
+        .mbtopgap{
+            margin-top: 40px;
+        }
+        .countercard{
+            text-align: center;
+            p{
+                @include myfont(12px,400,$main_font);
+                margin:0;
+            }
+            h2{
+                @include myfont(25px,700,$main_font);
+            }
+            img{
+                width: 44px;
+            }
+        }
+    }
+    .testimonialsection{
+        
+        padding-bottom: 40px;
+        .slick-dots{
+            bottom:0px;
+            li{
+                margin:0 2px;
+            }
+        }
+        .slick-active{
+            .dots--custom{
+                background-color: #000;
+            }
+        }
+        .dots--custom {
+            height: 15px;
+            width: 15px;
+            background-color: #D0D0D0;
+            border-radius: 50%;
+            position: relative;
+          }
+          
+        .testslider{
+            position: relative;
+            .prevbutton{
+                border:0;
+                position:absolute;
+                left:-60px;
+                top:50%;
+                transform: translateY(-50%);
+                background-color: #fff;
+                svg{
+                    font-size: 40px;
+                }
+            }
+            .nextbutton{
+                border:0;
+                position:absolute;
+                right:-60px;
+                top:50%;
+                transform: translateY(-50%);
+                background-color: #fff;
+                svg{
+                    font-size: 40px;
+                }
+            }
+            .slidemain{
+                padding:35px 10px;
+                
+                height: auto;
+                width: 100%;
+                border-radius: 15px;
+                background: #F8F8F8;
+                h3{
+                    @include myfont(20px,700,$main_font);
+                }
+                .ratinbox{
+                    
+                    span{
+                        &:first-child{
+                            color:#0782EA;
+                            margin-left: 0;
+                        }
+                        @include myfont(17px,500,$main_font);
+                        color:#4F547B;
+                        margin-left: 10px;
+                    }
+                    .stars{
+                        margin-top: 4px;
+                        margin-left: 10px;
+                        display: flex;
+                        img{
+                            width:17px;
+                            height: 15px;
+                        }
+                    }
+                    .textt{
+                        margin-top: 10px;
+                        line-height: 25px;
+                        @include myfont(14px,400,$main_font);
+                    }
+                }
+            }
+
+        }
+    }
+
+    .reqaquotesection{
+        padding-bottom: 40px;
+        margin-bottom: 25px;
+        background-color: #F8F8F8;
+        .basicinput{
+            input{
+                background-color: #f8f8f8;
+            }
+            textarea{
+                
+                background-color: #f8f8f8;
+            }
+        }
+        .mbrev{
+            flex-direction: row-reverse!important;
+        }
+        .mediumsectionheader{
+            text-align: start;
+        }
+        .buttondiv{
+            text-align: center;
+            .quotebutton{
+                margin-top: 15px;
+                width: 221px;
+                height: 56px;
+                @include myfont(20px,500,$main_font);
+                color: #fff;
+                background-color: #000;
+                border-radius: 0;
+            }
+        }
+    }
+     .leftform{
+        margin-top: 30px;
+        .mb10{
+            margin-bottom: 19px;
+        }
+    }
+    .rightform{
+        
+        
+        .smcard{
+            border: 1px solid #000;
+            border-radius: 8px;
+            height: 136px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &.mbgap{
+                margin-top: 20px;
+            }
+            .wrap{
+                text-align: center;
+                p{
+                    @include myfont(16px,500,$main_font);
+                    opacity: 0.5;
+                }
+                img{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+
+    .footersection{
+        .footerbox{
+            border-top:2px solid #000;
+            padding:50px 0;
+            border-bottom: 2px solid #000;;
+        }
+    }
+    .copyright{
+        padding:40px 0;
+        
+        .left,.right{
+            width: 100%;
+        }
+        .left{
+            display: flex;
+            justify-content: center;
+            gap:25px;
+            svg{
+                font-size: 40px;
+            }
+            .icondiv{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #000;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg{
+                    color:#fff;
+                    font-size: 20px;
+                }
+            }
+        }
+        .right{
+            text-align: center;
+            margin-top: 30px;
+            p{
+                @include myfont(18px,400,$main_font);
+            }
+        }
+
+    }
+
+}

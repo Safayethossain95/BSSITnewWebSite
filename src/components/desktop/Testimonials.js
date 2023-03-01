@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {AiOutlineLeft,AiOutlineRight} from 'react-icons/ai'
-const Testimonials = () => {
+const Testimonials = (props) => {
     var settings = {
         dots: true,
         infinite: true,
@@ -21,20 +21,20 @@ const Testimonials = () => {
       const slider = useRef(null);
   return (
     <>
-        <div className="testimonialsection">
+        <div className="testimonialsection"  data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
             <div className="myContainer">
                 <MediumSectionHeader head="Testimonials"/>
 
                 <Row>
                     <Col lg={11} className="m-auto">
                         <div className="testslider">
-                        <button className='prevbutton' onClick={() => slider?.current?.slickPrev()}><AiOutlineLeft/></button>
-                        <button className="nextbutton" onClick={() => slider?.current?.slickNext()}><AiOutlineRight/></button>
+                        <button className={props.arrows=="false"?'d-none':"prevbutton"} onClick={() => slider?.current?.slickPrev()}><AiOutlineLeft/></button>
+                        <button className={props.arrows=="false"?'d-none':"nextbutton"} onClick={() => slider?.current?.slickNext()}><AiOutlineRight/></button>
 
                     <Slider {...settings} ref={slider}>
                         <div >
                             <div className="slidemain">
-                                <h3>@ Name Here</h3>
+                                <h3>@ British Standard School</h3>
                                 <div className="ratinbox d-flex flex-column" >
                                     <div className="wrapper d-flex">
                                     <span>{rating}</span>
@@ -58,7 +58,7 @@ const Testimonials = () => {
                                     <span> &#40;30&#41;</span>
                                     </div>
                                     <div className="textt">
-                                            <p>Lorem ipsum dolor sit amet consectetur. Neque mauris massa mauris et dui volutpat nunc purus felis. Est vitae et velit at. Lorem ipsum dolor sit amet consectetur. Neque mauris massa mauris et dui volutpat nunc purus felis. Est vitae et velit at.</p>
+                                            <p>“This IT company exceeded our expectations, delivering high-quality and innovative solutions. Their team was knowledgeable, responsive, and a pleasure to work with. Highly recommended!"</p>
                                         </div>
                                 </div>
                             </div>

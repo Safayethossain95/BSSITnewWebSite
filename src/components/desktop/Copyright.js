@@ -19,7 +19,7 @@ const Copyright = () => {
                 <FaLinkedinIn/>
             </div>
             </div>
-            <div className="right text-end">
+            <div className="right">
                 <p>&copy; 2023. BSSIT. All right reserved</p>
             </div>
         </div>

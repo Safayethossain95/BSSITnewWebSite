@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap'
 const CommonButton = (props) => {
   return (
     <div className="commonbutton">
-        <Button>{props.text}</Button>
+        <Button data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">{props.text}</Button>
     </div>
   )
 }

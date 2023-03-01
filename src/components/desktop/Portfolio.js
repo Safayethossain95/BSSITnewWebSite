@@ -55,12 +55,12 @@ const Portfolio = () => {
   
   return (
     <>
-        <div className="portfoliosection">
+        <div className="portfoliosection"  data-aos-delay="400" data-aos="fade-up" data-aos-duration="2000">
             <div className="myContainer">
                 <MediumSectionHeader head="Portfolio"/>
 
                 <Row>
-                    <Col lg={6}>
+                    <Col lg={6} data-aos-delay="400" data-aos="fade-right" data-aos-duration="4000">
                     <Slider {...settings} asNavFor={nav2} ref={(slider1) => setNav1(slider1)}>
                         <div >
                             <div className="innerdiv" style={{border:"8px solid #0782EA"}}>
@@ -79,14 +79,14 @@ const Portfolio = () => {
                         </Slider>
                     </Col>
                     <Col lg={6}>
-                        <div className="rightslider">
+                        <div className="rightslider" data-aos-delay="400" data-aos="fade-left" data-aos-duration="4000">
                             
                         {/* <button className='prevbutton' onClick={() => slider?.current?.slickPrev()}><BsArrowLeft/></button>
                         <button className="nextbutton" onClick={() => slider?.current?.slickNext()}><BsArrowRight/></button> */}
                         <Slider {...settings2} asNavFor={nav1}  ref={(slider1) => {setNav2(slider1)}}>
                             <div >
 
-                                <div className="rightslideinnerdiv">
+                                <div className="rightslideinnerdiv"  >
                                 <div className="wrapperinnerrightslide">
                                     <h3>LMS Development for British Standard School</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur. Neque mauris massa mauris et dui volutpat nunc purus felis. Est vitae et velit at.</p>
@@ -94,7 +94,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                             <div>
-                            <div className="rightslideinnerdiv">
+                            <div className="rightslideinnerdiv" >
                                 <div className="wrapperinnerrightslide">
                                     <h3>LMS Development for Tarbiyah Institute</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur. Neque mauris massa mauris et dui volutpat nunc purus felis. Est vitae et velit at.</p>

@@ -16,6 +16,7 @@ html {
   }
 body{
     overflow-x: hidden;
+    overflow-y: auto;
 }
 ul,ol{
     list-style-type: none;
@@ -33,7 +34,7 @@ a{
         display: none;
     }
 
-
+    
 table{
     tr{
         th{
@@ -198,12 +199,12 @@ p{
 
 .sticky {
     position: fixed!important;
-    top: -20px;
+    top: -100px;
     width: 100%;
     z-index: 1030;
     transition: 0.4s;
-    transform: translateY(20px);
-    background:#fff;
+    transform: translateY(100px);
+    background:#000!important;
     -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
     box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.20);
@@ -265,6 +266,7 @@ p{
         color: #000;
         margin-top: 29px;
         @include myfont(20,500,$button_font);
+        transition: 0.4s!important;
     }
 }
 .mediumsectionheader{
@@ -282,8 +284,28 @@ p{
             transform:translateX(-50%);
             position:absolute;
             content:'';
-            background-color: #000;;
+            background-color: #000;
+            animation: mymove2 3s infinite;
+            transform: scaleX(0) translateX(-50%);
+            transform-origin: bottom left;
+            transition:transform 3s infinite;
         }
+        @keyframes mymove2 {
+            0% {
+             transform: scaleX(1) translateX(-50%);
+             transform-origin: bottom left;
+            }
+            
+            50% {
+                transform: scaleX(0) translateX(-50%);
+                transform-origin: bottom left;
+            }
+            100%{
+                transform: scaleX(1) translateX(-50%);
+             transform-origin: bottom right;
+            }
+            
+          }
     }
 }
 .focussmallcard{
@@ -334,7 +356,7 @@ p{
 }
 
 button{
-    border:none!important;
+    
     &:focus{
         box-shadow: none!important;
     }
@@ -386,6 +408,24 @@ button{
                 @include myfont(18px,400,$main_font);
                 margin-left: 15px;
             }
+        }
+    }
+}
+
+.wcuCardmain{
+    margin-top: 65px;
+    .mytitle{
+        h4{
+            @include myfont(40px,700,$main_font);
+            margin-bottom: 10px;
+            
+        }
+    }
+    .para{
+        margin-top: 30px;
+        p{
+            @include myfont(25px,400,$main_font);
+            line-height: 30px;
         }
     }
 }

@@ -88,18 +88,18 @@ const Footer = () => {
     <>
         <div className="footersection">
             <div className="myContainer">
-                <div className="footerbox">
+                <div className="footerbox d-none d-lg-block">
                     <Row>
-                        <Col lg={3} style={{flex:"1 1 35%"}}>
+                        <Col lg={3} xs={12} style={{flex:"1 1 35%"}}>
                             <Footercard footerApi={footerApi}/>
                         </Col>
-                        <Col lg={3} style={{flex:"1 1 20%"}}>
+                        <Col lg={3} xs={6} style={{flex:"1 1 20%"}}>
                             <Footercard footerApi={footerApi2}/>
                         </Col>
-                        <Col lg={3} style={{flex:"1 1 20%"}}>
+                        <Col lg={3} xs={6} style={{flex:"1 1 20%"}}>
                             <Footercard footerApi={footerApi3}/>
                         </Col>
-                        <Col lg={3} style={{flex:"1 1 25%"}}>
+                        <Col lg={3} xs={12} style={{flex:"1 1 25%"}}>
                             <div className="fcart">
                                 <h3>Contact Information</h3>
                                 <div className="rowline d-flex">
@@ -124,7 +124,50 @@ const Footer = () => {
                                         <HiMail/>
                                     </div>
                                     <div className="rightone">
-                                        <p>contact@bssit.com</p>
+                                        <p>info@bssitbd.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </div>
+                <div className="footerbox d-block d-lg-none">
+                <Row>
+                        <Col lg={3} xs={12} >
+                            <Footercard footerApi={footerApi}/>
+                        </Col>
+                        <Col lg={3} xs={6} >
+                            <Footercard footerApi={footerApi2}/>
+                        </Col>
+                        <Col lg={3} xs={6} >
+                            <Footercard footerApi={footerApi3}/>
+                        </Col>
+                        <Col lg={3} xs={12} >
+                            <div className="fcart">
+                                <h3>Contact Information</h3>
+                                <div className="rowline d-flex">
+                                    <div className="leftone">
+                                        <HiLocationMarker/>
+                                    </div>
+                                    <div className="rightone">
+                                        <p>13, Larmini Street, Wari,
+                                        Dhaka, Bangladesh</p>
+                                    </div>
+                                </div>
+                                <div className="rowline2 d-flex">
+                                    <div className="leftone">
+                                        <BsTelephoneFill/>
+                                    </div>
+                                    <div className="rightone">
+                                        <p>01902020202</p>
+                                    </div>
+                                </div>
+                                <div className="rowline d-flex">
+                                    <div className="leftone">
+                                        <HiMail/>
+                                    </div>
+                                    <div className="rightone">
+                                        <p>info@bssitbd.com</p>
                                     </div>
                                 </div>
                             </div>

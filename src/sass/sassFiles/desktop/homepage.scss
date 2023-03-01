@@ -12,13 +12,20 @@
     .mynavbar{
         background-color: transparent;
         position: absolute;
-        top:0;
+        
         left: 0;
         width: 100%;
         z-index: 999;
+        height: 100px;
+        
         .nav-link{
             color:#fff;
             margin:0 25px;
+            padding: 0!important;
+            @include myfont(18px,400,$main_font);
+            @include media(lgDevice){
+                margin:0 12px;
+            }
         }
     }
 
@@ -30,11 +37,25 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            
+            background-color: rgba(0, 94, 174, 0.8);;
             text-align: center;
+            img{
+                &:first-child{
+                    position: absolute;
+                    left:0;
+                    top:0;
+                    height: 100%;
+                }
+                &:nth-child(2){
+                    position: absolute;
+                    right:0;
+                    top:0;
+                    height: 100%;
+                }
+            }
             .bnrtextwrapper{
                 margin-top: 50vh;
-                transform: translateY(-50%);
+                transform: translateY(-50%)!important;
 
                 h1{
                     
@@ -48,9 +69,10 @@
                 }
             }
         }
-        img{
+        video{
             width: 100%;
             height: 100vh;
+            object-fit: cover;
         }
     }
 
@@ -62,16 +84,38 @@
                 @include myfont(80px,700,$main_font);
                 position: relative;
                 margin: 75px 0;
+                display: inline-block;
+
                 &::after{
                     bottom:-16px;
-                    width:140px;
+                    width:70%;
                     height: 8px;
                     left: 50%;
-                    transform:translateX(-50%);
+                    
                     position:absolute;
                     content:'';
-                    background-color: #000;;
+                    background-color: #000;
+                    animation: mymove 3s infinite;
+                    transform: scaleX(0) translateX(-50%);
+                    transform-origin: bottom left;
+                    transition:transform 3s infinite;
                 }
+                @keyframes mymove {
+                    0% {
+                     transform: scaleX(1) translateX(-50%);
+                     transform-origin: bottom left;
+                    }
+                    
+                    50% {
+                        transform: scaleX(0) translateX(-50%);
+                        transform-origin: bottom left;
+                    }
+                    100%{
+                        transform: scaleX(1) translateX(-50%);
+                     transform-origin: bottom right;
+                    }
+                    
+                  }
             }
         }
         .servicesubcomponent{
@@ -105,37 +149,41 @@
         width: 100%;
     }
     .whychooseussection{
-        height: 815px;
+        
         width: 100%;
-        background-color: #000;
-        padding:90px 0 190px 0;
+        background-color: #fff;
+        padding: 0 0 90px 0;
         .heading{
             h4{
                 @include myfont(35px,700,$main_font);
-                color:#fff;
+                color:#000;
                 margin-bottom: 40px;
             }
         }
         .middlesection{
             p{
-                @include myfont(18px,500,$main_font);
-                color:#fff;
+                @include myfont(25px,400,$main_font);
+                color:#000;
                 margin-bottom: 20px;
             }
         }
     }
     .ourclientssection{
         padding-bottom: 43px;
+        background-color: #f8f8f8;
+        img{
+            margin-bottom: 30px;
+        }
     }
 
     .portfoliosection{
-        background-color: #f8f8f8;
+        
         padding-bottom: 100px;
         .rightslider{
             position: relative;
-            width:465px;
+            width:100%;
             height: 365px;
-            margin-left: 60px;
+            padding-left: 60px;
             
             .slick-slider{
                 
@@ -182,16 +230,22 @@
                 }
             }
             .rightslideinnerdiv{
-                display:flex;
-                justify-content: center;
-                align-items: center;
+               
                 .wrapperinnerrightslide{
-                    width:465px;
+                    width:100%;
                     height: 365px;
                     
                     h3{
                         @include myfont(40px,700,$main_font);
-                        margin-bottom: 45px;
+                        
+                        @include media(lgDevice){
+                            @include myfont(28px,700,$main_font);
+                        }
+                        @include media(xlgDevice){
+                            @include myfont(35px,700,$main_font);
+                        }
+                            margin-bottom: 40px;
+                        
                     }
                     p{
                         @include myfont(25px,400,$main_font);
@@ -204,6 +258,7 @@
     }
     .countersection{
         padding:100px 0;
+        background-color: #f8f8f8;
         .countercard{
             text-align: center;
             p{
@@ -216,7 +271,7 @@
         }
     }
     .testimonialsection{
-        background-color: #f8f8f8;
+        
         padding-bottom: 115px;
         .slick-dots{
             bottom:-80px;
@@ -245,7 +300,7 @@
                 left:-60px;
                 top:50%;
                 transform: translateY(-50%);
-                background-color: #f8f8f8;
+                background-color: #fff;
                 svg{
                     font-size: 40px;
                 }
@@ -256,7 +311,7 @@
                 right:-60px;
                 top:50%;
                 transform: translateY(-50%);
-                background-color: #f8f8f8;
+                background-color: #fff;
                 svg{
                     font-size: 40px;
                 }
@@ -266,7 +321,7 @@
                 height: 314px;
                 width: 100%;
                 border-radius: 15px;
-                background-color: #fff;
+                background: #F8F8F8;
                 h3{
                     @include myfont(30px,700,$main_font);
                 }
@@ -337,6 +392,10 @@
                 text-align: center;
                 p{
                     @include myfont(16px,500,$main_font);
+                    opacity: 0.5;
+                }
+                img{
+                    opacity: 0.5;
                 }
             }
         }

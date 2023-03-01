@@ -3,22 +3,23 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 const MyNavbar = () => {
   return (
     <>
-        <Navbar className='mynavbar' expand="lg">
+        <Navbar className='mynavbar' id="mynavbar" expand="lg">
         <Container>
-        <Navbar.Brand href="#home"><img src="./assets/images/homepage/logo.png" alt="" /></Navbar.Brand>
+        <Navbar.Brand href="#home"><Link to="/"><img src="./assets/images/homepage/logo.png" alt="" /></Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
-            <Nav.Link href="#link">Services</Nav.Link>
-            <Nav.Link href="#link">Portfolio</Nav.Link>
-            <Nav.Link href="#link">Pricing</Nav.Link>
-            <Nav.Link href="#link">Blog</Nav.Link>
-            <Nav.Link href="#link">Contact</Nav.Link>
+            <Link className='nav-link' to="/">Home</Link>
+            <Link className='nav-link' to="/about">About</Link>
+            <Link className='nav-link' to="/services">Services</Link>
+            <Link className='nav-link' to="/portfolio">Portfolio</Link>
+            <Link className='nav-link' to="/pricing">Pricing</Link>
+            <Link className='nav-link' to="/blog">Blog</Link>
+            <Link className='nav-link' to="/contact">Contact</Link>
             
             </Nav>
         </Navbar.Collapse>
